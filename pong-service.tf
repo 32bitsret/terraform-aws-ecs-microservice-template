@@ -98,6 +98,14 @@ resource "aws_ecs_task_definition" "pong_service_task_defination" {
   ])
 }
 
+# resource "aws_appautoscaling_target" "pong_service_app_scale_target" {
+#   service_namespace  = "ecs"
+#   resource_id        = "service/${aws_ecs_cluster.pong_cluster.name}/${aws_ecs_service.pong_service.name}"
+#   scalable_dimension = "ecs:service:DesiredCount"
+#   max_capacity       = var.ecs_autoscale_max_instances
+#   min_capacity       = var.ecs_autoscale_min_instances
+# }
+
 resource "aws_ecs_service" "pong_service" {
   name            = "${local.pong_microservice}-${var.environment}-service"
   cluster         = aws_ecs_cluster.pong_cluster.id
