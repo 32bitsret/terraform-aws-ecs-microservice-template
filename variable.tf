@@ -1,6 +1,6 @@
 # The application's name
 variable "app" {
-  default = "birs"
+  default = "em"
 }
 
 # The environment that is being built
@@ -20,15 +20,15 @@ variable "logs_retention_in_days" {
 
 # SSL
 variable "frontend_domain" {
-  default = "bsg.com.ng"
+  default = "everydaymoney.ng"
 }
 
 variable "api_domain" {
-  default = "api.bsg.com.ng"
+  default = "api.everydaymoney.ng"
 }
 
 variable "acme_registration_email" {
-  default = "integrations@softnet.com.ng"
+  default = "contact@everydaymoney.ng"
 }
 
 variable "acme_server_url" {
